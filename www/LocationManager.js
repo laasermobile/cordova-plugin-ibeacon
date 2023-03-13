@@ -39,12 +39,14 @@ var BeaconRegion = require('com.unarin.cordova.beacon.BeaconRegion');
  */
 
  function LocationManager (){
-	this.delegate = new Delegate();
-	this._registerDelegateCallbackId();
-
-	this.bindMethodContexts();
 	
  }
+
+LocationManager.prototype.begin = function(){
+   this.bindMethodContexts();
+   this.delegate = new Delegate();
+   this._registerDelegateCallbackId();
+}
  
 /**
  * Binds the contexts of instance methods to the actual {LocationManager}
