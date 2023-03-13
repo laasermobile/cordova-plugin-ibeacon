@@ -52,6 +52,11 @@ through the ```cordova.plugins.locationManager``` reference chain.
 
 Since version 3.2 the Klass dependency has been removed and therefore means creation of the delegate has changed.
 
+
+#### To start
+A new method has been created called "begin()". This was done to move the constructor logic to a place that can be called instead of it immediately happening. Without this change, the plugin was causing on iOS a bluetooth permission dialog to be displayed immediatley upon app launch.
+
+
 #### iOS 8 Permissions
 
 On iOS 8, you have to request permissions from the user of your app explicitly. You can do this through the plugin's API.
